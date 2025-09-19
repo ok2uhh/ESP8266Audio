@@ -9,7 +9,7 @@ AudioGeneratorMP3::~AudioGeneratorMP3() {
 }
 
 bool AudioGeneratorMP3::begin(AudioFileSource &input, AudioOutput &output) {
-  this->input = &input;
+  // this->input = &input;  ← odstraněno, protože neexistuje
   this->output = &output;
   // Inicializace dekódování MP3
   return true;
