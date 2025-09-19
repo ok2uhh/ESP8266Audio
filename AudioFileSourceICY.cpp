@@ -1,4 +1,6 @@
 #include "AudioFileSourceICY.h"
+#include <stdio.h>  // ← přidá SEEK_SET
+
 
 AudioFileSourceICY::AudioFileSourceICY(AudioFileSource *source, int bufferSize)
   : AudioFileSourceBuffer(source, bufferSize), icyInterval(0), icyCount(0), icyFound(false), icyMeta(false) {}
@@ -18,7 +20,7 @@ int AudioFileSourceICY::read(void *data, int len) {
 bool AudioFileSourceICY::seek(int pos) {
   icyCount = 0;
   icyMeta = false;
-  return AudioFileSourceBuffer::seek(pos);
+  return AudioFileSourceBuffer::seek(pos, SEEK_SET);  // Opraveno: přidán druhý argument
 }
 
 int AudioFileSourceICY::readMetadata(char *data, int len) {
