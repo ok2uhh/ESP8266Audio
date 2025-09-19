@@ -1,0 +1,9 @@
+AudioFileSourceICY  KEYWORD1
+AudioGeneratorMP3   KEYWORD1
+AudioOutputPWM  KEYWORD1
+begin   KEYWORD2
+loop    KEYWORD2
+stop    KEYWORD2
+read    KEYWORD2
+seek    KEYWORD2
+consumeSample   KEYWORD2
