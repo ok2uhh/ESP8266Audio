@@ -12,6 +12,9 @@ class AudioGeneratorMP3 : public AudioGenerator {
     virtual bool begin(AudioFileSource &input, AudioOutput &output);
     virtual bool loop();
     virtual bool stop();
+
+  protected:
+    AudioOutput* output;  // ← přidáno pro správnou kompilaci
 };
 
 #endif
